@@ -1,0 +1,34 @@
+:root {
+  --bg: #faf9f5;
+  --surface: #fcfbf8;
+  --outside: #f3f2ed;
+  --surface-hover: #f5f2ea;
+  --selected: #efece3;
+  --note-paper: #f1ece1;
+  --note-rule: #ddd6c8;
+  --ink: #22201d;
+  --muted: #6f6b64;
+  --weak: #9e9a92;
+  --olive: #6d7265;
+  --rest-bg: #e8e7df;
+  --sunday-bg: #f2e3dd;
+  --sunday-ink: #b06a56;
+  --red: #9e3a32;
+  --pen: #9e3a32;
+  --today-seal: #d98a73;
+  --today-line: #c8735b;
+  --countdown-bg: #f2eae2;
+  --countdown-ink: #b45e46;
+  --line: #e6e3db;
+  --column-line: #e7e4dc;
+  --grid-frame: #e3e0d8;
+  --grid-line: #eae7e0;
+  --task-line: #eae7df;
+  --serif:
+    "Noto Serif SC", "Source Han Serif SC", "Songti SC", Georgia, "SimSun",
+    serif;
+  --sans:
+    "PingFang SC", "Noto Sans SC", -apple-system, BlinkMacSystemFont,
+    "Microsoft YaHei UI", sans-serif;
+  color-scheme: light;
+}

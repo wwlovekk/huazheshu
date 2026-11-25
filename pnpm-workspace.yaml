@@ -1,0 +1,6 @@
+allowBuilds:
+  esbuild: true
+  electron-winstaller: false
+fetchTimeout: 600000
+fetchRetries: 3
+networkConcurrency: 12

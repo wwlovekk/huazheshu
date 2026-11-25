@@ -1,0 +1,67 @@
+{
+  "name": "huazheshu",
+  "version": "0.3.0",
+  "description": "划着数 · 把日子过成自己的样子",
+  "author": "划着数",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "pnpm build && pnpm start",
+    "build": "tsc --noEmit && vite build && node scripts/build-engine.mjs && powershell -NoProfile -File scripts/build-native.ps1",
+    "test": "vitest run",
+    "test:ui": "playwright test",
+    "dist": "pnpm build && electron-builder --win nsis --x64 --prepackaged out/desktop",
+    "start": "node scripts/start-desktop.mjs",
+    "format": "prettier --write src tests scripts *.ts *.json *.yaml README.md"
+  },
+  "dependencies": {
+    "lucide-react": "latest",
+    "lunar-typescript": "1.8.7",
+    "react": "latest",
+    "react-dom": "latest",
+    "zod": "latest"
+  },
+  "devDependencies": {
+    "@playwright/test": "latest",
+    "@types/node": "^24.0.0",
+    "@types/react": "latest",
+    "@types/react-dom": "latest",
+    "@vitejs/plugin-react": "4.7.0",
+    "electron-builder": "26.18.0",
+    "prettier": "3.7.4",
+    "typescript": "5.9.3",
+    "vite": "7.2.2",
+    "vitest": "3.2.4"
+  },
+  "build": {
+    "appId": "local.huazheshu.desktop",
+    "productName": "划着数",
+    "directories": {
+      "output": "release",
+      "buildResources": "resources"
+    },
+    "electronVersion": "44.7.0",
+    "win": {
+      "target": [
+        "nsis"
+      ],
+      "icon": "resources/icon.ico",
+      "artifactName": "Huazheshu-${version}-Setup.${ext}",
+      "signExecutable": false
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "shortcutName": "划着数",
+      "deleteAppDataOnUninstall": false,
+      "packElevateHelper": false,
+      "installerLanguages": [
+        "zh_CN"
+      ],
+      "include": "resources/installer.nsh"
+    }
+  }
+}

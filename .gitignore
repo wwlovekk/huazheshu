@@ -1,0 +1,9 @@
+node_modules/
+out/
+release/
+test-results/
+playwright-report/
+.test-data/
+*.log
+native/bin/
+native/obj/
